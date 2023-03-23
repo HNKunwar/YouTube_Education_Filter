@@ -1,8 +1,22 @@
 {
-  "manifest_version": 3,
   "name": "YouTube Education Filter",
-  "version": "1.0",
   "description": "Blocks non-education videos on YouTube",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_icon": {
+      "16": "img/favicon16.png",
+      "32": "img/favicon32.png",
+      "128": "img/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "img/favicon16.png",
+    "32": "img/favicon32.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
   "permissions": [
     "storage",
     "tabs",
@@ -12,10 +26,6 @@
   "host_permissions": [
     "https://www.youtube.com/*"
   ],
-  "action": {
-    "default_icon": "icon38.png",
-    "default_popup": "popup/index.html"
-  },
   "background": {
     "service_worker": "background.js"
   },
@@ -28,8 +38,5 @@
         "content.js"
       ]
     }
-  ],
-  "icons": {
-    "48": "icon48.png"
-  }
+  ]
 }
