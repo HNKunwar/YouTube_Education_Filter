@@ -1,4 +1,5 @@
 let scriptTag = null;
+let contentScriptReady = false;
 
 const checkForChanges = async () => {
   try {
@@ -20,11 +21,28 @@ const checkForChanges = async () => {
     const newScriptTag = response.result;
     if (newScriptTag !== scriptTag) {
       scriptTag = newScriptTag;
-      chrome.tabs.sendMessage(tab.id, { type: "checkEducationCategory" });
+      if (contentScriptReady) {
+        chrome.tabs.sendMessage(tab.id, { type: "checkEducationCategory" });
+      }
     }
   } catch (error) {
     console.error("Error:", error);
   }
 };
+
+const sendUpdateFilterStatusMessage = () => {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    chrome.tabs.sendMessage(tabs[0].id, { type: 'updateFilterStatus' });
+  });
+};
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.type === 'contentScriptReady') {
+    contentScriptReady = true;
+  } else if (request.type === 'changeFilterStatus') {
+    contentScriptReady = request.enabled;
+    sendUpdateFilterStatusMessage();
+  }
+});
 
 setInterval(checkForChanges, 2000);

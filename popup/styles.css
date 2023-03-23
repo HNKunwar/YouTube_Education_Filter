@@ -45,3 +45,18 @@ button#toggleFilter.filterActive:hover {
 button#toggleFilter:active {
   transform: scale(0.98);
 }
+
+.smallText {
+  font-size: 14px;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.smallText a {
+  color: #167ac6;
+  text-decoration: none;
+}
+
+.smallText a:hover {
+  text-decoration: underline;
+}

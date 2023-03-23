@@ -24,3 +24,9 @@ toggleButton.addEventListener('click', () => {
 });
 
 updateToggleButton();
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.type === 'updateFilterStatus') {
+    updateToggleButton();
+  }
+});

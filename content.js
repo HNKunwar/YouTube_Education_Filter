@@ -23,3 +23,5 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     checkEducationCategory();
   }
 });
+
+chrome.runtime.sendMessage({ type: "contentScriptReady" });
