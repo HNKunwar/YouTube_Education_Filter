@@ -1,5 +1,5 @@
 # YouTube_Education_Filter
-Simple Chrome extension that blocks all videos that aren't tagged in the Education genre. For when you can't block Youtube because you need that direction connection to the Titan Among Men, the Patron Saint of Education: TheOrganicChemistryTutor.
+Simple Chrome extension that blocks all videos that aren't tagged in the Education genre. For when you can't block Youtube because you need that direct connection to the Titan Among Men, the Patron Saint of Education: TheOrganicChemistryTutor.
 
 When Enabled it will redirect all videos not in the YouTube Education category back to the home page. More of a soft block and reminder as there's no feature to enforce or schedule blocks.
 
