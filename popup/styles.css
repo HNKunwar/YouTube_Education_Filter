@@ -1,0 +1,47 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 150px;
+}
+
+h1 {
+  font-size: 20px;
+  color: #202020;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+button#toggleFilter {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #1e88e5;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button#toggleFilter.filterActive {
+  background-color: #e53935;
+}
+
+button#toggleFilter:hover {
+  background-color: #1565c0;
+}
+
+button#toggleFilter.filterActive:hover {
+  background-color: #c62828;
+}
+
+button#toggleFilter:active {
+  transform: scale(0.98);
+}
