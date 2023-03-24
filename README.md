@@ -12,7 +12,7 @@ It should work as intended now. Any YouTube pages open when you install will nee
 
 1. Download ZIP and Extract.
 2. Go to `chrome://extensions/` in the search bar or go to settings and then extensions on bottom left on the nav bar.
-3. Click 'Load unpacked' and then either drag and drop or navigate to the unzipped YT Filter folder and select.
+3. Turn on dev mode (top right). Click 'Load unpacked' and then either drag and drop or navigate to the unzipped YT Filter folder and select.
 4. Pin extension.
 
 <div align="center">
