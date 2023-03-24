@@ -15,18 +15,11 @@ const updateToggleButton = () => {
 toggleButton.addEventListener('click', () => {
   chrome.storage.sync.get(['filterEnabled'], (result) => {
     const newStatus = !result.filterEnabled;
-    chrome.runtime.sendMessage({
-      type: 'changeFilterStatus',
-      enabled: newStatus,
+    chrome.storage.sync.set({ filterEnabled: newStatus }, () => {
+      chrome.runtime.sendMessage({ type: 'filterStatusChanged' });
+      updateToggleButton();
     });
-    chrome.storage.sync.set({ filterEnabled: newStatus }, updateToggleButton);
   });
 });
 
 updateToggleButton();
-
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.type === 'updateFilterStatus') {
-    updateToggleButton();
-  }
-});

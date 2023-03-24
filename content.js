@@ -8,14 +8,20 @@ const checkEducationCategory = () => {
     return;
   }
 
-  const scriptTag = document.getElementById('scriptTag');
-
-  if (scriptTag) {
-    const metadata = JSON.parse(scriptTag.textContent);
-    if (metadata.genre !== 'Education') {
-      window.location.href = 'https://www.youtube.com/';
+  chrome.storage.sync.get(['filterEnabled'], (result) => {
+    if (!result.filterEnabled) {
+      return;
     }
-  }
+
+    const scriptTag = document.getElementById('scriptTag');
+
+    if (scriptTag) {
+      const metadata = JSON.parse(scriptTag.textContent);
+      if (metadata.genre !== 'Education') {
+        window.location.href = 'https://www.youtube.com/';
+      }
+    }
+  });
 };
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -23,5 +29,3 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     checkEducationCategory();
   }
 });
-
-chrome.runtime.sendMessage({ type: "contentScriptReady" });
