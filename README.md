@@ -4,7 +4,9 @@ Simple Chrome extension that blocks all videos that aren't tagged in the Educati
 
 When Enabled it will redirect all videos not in the YouTube Education category back to the home page. More of a soft block and reminder as there's no feature to enforce or schedule blocks.
 
-**IMPORTANT NOTE:** As of Version 1.0, the disable toggle will work and seems to work perfectly, but after you press the Enable toggle you have to reload the Youtube page for it to work.
+~~**IMPORTANT NOTE:** As of Version 1.0, the disable toggle will work and seems to work perfectly, but after you press the Enable toggle you have to reload the Youtube page for it to work.~~
+It should work as intended now. Any YouTube pages open when you install will need to be reloaded but after that it should be fine.
+
 
 ## Installation
 
